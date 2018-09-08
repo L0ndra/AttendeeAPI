@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
+using Microsoft.WindowsAzure.Storage.Table;
 using Newtonsoft.Json;
 namespace Conference.DataObjects
 {
-    public class Category : BaseDataObject
+    public class Category: BaseTableEntity
     {
         /// <summary>
         /// Gets or sets the name that is displayed during filtering
@@ -23,24 +24,5 @@ namespace Conference.DataObjects
         /// </summary>
         /// <value>The color.</value>
         public string Color { get; set; }
-        #if MOBILE
-        bool filtered;
-        [JsonIgnore]
-        public bool IsFiltered
-        {
-            get { return filtered; }
-            set { SetProperty(ref filtered, value); }
-        }
-
-        bool enabled;
-        [JsonIgnore]
-        public bool IsEnabled
-        {
-            get { return enabled; }
-            set { SetProperty(ref enabled, value); }
-        }
-        [JsonIgnore]
-        public string BadgeName => string.IsNullOrWhiteSpace(ShortName) ? Name : ShortName; 
-        #endif
     }
 }

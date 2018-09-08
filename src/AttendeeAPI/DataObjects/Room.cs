@@ -1,8 +1,9 @@
 ﻿using System;
+using Microsoft.WindowsAzure.Storage.Table;
 
 namespace Conference.DataObjects
 {
-    public class Room : BaseDataObject
+    public class Room: BaseTableEntity
     {
         /// <summary>
         /// Gets or sets the name.

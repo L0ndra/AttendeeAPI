@@ -1,0 +1,49 @@
+{
+  "disabled": false,
+  "bindings": [
+    {
+      "authLevel": "function",
+      "name": "req",
+      "type": "httpTrigger",
+      "direction": "in",
+      "methods": [
+        "get",
+      ]
+    },
+    {
+      "name": "$return",
+      "type": "http",
+      "direction": "out"
+    },
+    {
+      "name": "sessions",
+      "type": "table",
+      "tableName": "Session",
+      "connection": "Storage",
+      "direction": "in"
+    },
+    {
+      "name": "speakers",
+      "type": "table",
+      "tableName": "Speaker",
+      "connection": "Storage",
+      "direction": "in"
+    },
+    {
+      "name": "rooms",
+      "type": "table",
+      "tableName": "Room",
+      "connection": "Storage",
+      "direction": "in"
+    },
+    {
+      "name": "categories",
+      "type": "table",
+      "tableName": "Category",
+      "connection": "Storage",
+      "direction": "in"
+    }
+  ],
+  "scriptFile": "..\\bin\\AttendeeAPI.dll",
+  "entryPoint": "SessionAPI.GetAllSessions.Run"
+}

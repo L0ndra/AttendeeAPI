@@ -1,8 +1,9 @@
 ﻿using System;
+using Microsoft.WindowsAzure.Storage.Table;
 
 namespace Conference.DataObjects
 {
-    public class Sponsor : BaseDataObject
+    public class Sponsor: TableEntity
     {
         /// <summary>
         /// Gets or sets the name of sponsor

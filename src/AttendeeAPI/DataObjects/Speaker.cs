@@ -1,9 +1,10 @@
 ﻿using System.Collections.Generic;
 ﻿using System;
+using Microsoft.WindowsAzure.Storage.Table;
 
 namespace Conference.DataObjects
 {
-    public class Speaker : BaseDataObject
+    public class Speaker: BaseTableEntity
     {
         /// <summary>
         /// Gets or sets the first name.

@@ -1,9 +1,12 @@
 ﻿using System;
+using Microsoft.WindowsAzure.Storage.Table;
 using Newtonsoft.Json;
 namespace Conference.DataObjects
 {
-    public class FeaturedEvent : BaseDataObject
-    {
+    public class FeaturedEvent: BaseTableEntity
+    {        
+        public string Id { get; set; }
+
         /// <summary>
         /// Gets or sets the title of the event such as: Conference Keynote
         /// </summary>
@@ -44,12 +47,6 @@ namespace Conference.DataObjects
         /// <value>The sponsor.</value>
         public virtual Sponsor Sponsor { get; set; }
 
-        #if MOBILE
-        [JsonIgnore]
-        public bool HasSponsor => Sponsor != null;
-        [JsonIgnore]
-        public DateTime StartTimeOrderBy { get { return StartTime.HasValue ? StartTime.Value : DateTime.MinValue; } }
-        #endif
     }
 }
 
