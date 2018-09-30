@@ -13,7 +13,7 @@ namespace Conference.DataObjects
     public class Session: BaseTableEntity
     {
         public Session() {
-            this.Speakers = new List<Speaker>();
+            this.SpeakersIds = new List<string>();
         }
         /// <summary>
         /// Gets or sets the title.
@@ -33,28 +33,11 @@ namespace Conference.DataObjects
         /// </summary>
         /// <value>The abstract.</value>
         public string Abstract { get; set; }
-
-        /// <summary>
-        /// Gets or sets the speakers.
-        /// </summary>
-        /// <value>The speakers.</value>
-        public virtual ICollection<Speaker> Speakers { get; set; }
         
         public IEnumerable<string> SpeakersIds { get; set; }
-
-        /// <summary>
-        /// Gets or sets the room.
-        /// </summary>
-        /// <value>The room.</value>
-        public virtual Room Room { get; set; }
         
         public string RoomId { get; set; }
 
-        /// <summary>
-        /// Gets or sets the main category.
-        /// </summary>
-        /// <value>The main category.</value>
-        public virtual Category MainCategory { get; set; }
         
         public string CategoryId { get; set; }
 
