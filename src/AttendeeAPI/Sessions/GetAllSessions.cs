@@ -1,7 +1,9 @@
 
+using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Threading.Tasks;
 using Conference.DataObjects;
 using Microsoft.AspNetCore.Mvc;
@@ -9,9 +11,8 @@ using Microsoft.Azure.WebJobs;
 using Microsoft.Azure.WebJobs.Extensions.Http;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Azure.WebJobs.Host;
-using Microsoft.Build.Framework;
+using Microsoft.Extensions.Logging;
 using Microsoft.WindowsAzure.Storage.Table;
-using Microsoft.WindowsAzure.Storage.Table.Protocol;
 using Newtonsoft.Json;
 
 namespace Sessions
