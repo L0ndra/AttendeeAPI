@@ -12,9 +12,6 @@ namespace Conference.DataObjects
 {
     public class Session: BaseTableEntity
     {
-        public Session() {
-            this.SpeakersIds = new List<string>();
-        }
         /// <summary>
         /// Gets or sets the title.
         /// </summary>
@@ -35,6 +32,7 @@ namespace Conference.DataObjects
         public string Abstract { get; set; }
         
         public IEnumerable<string> SpeakersIds { get; set; }
+        public string SpeakersIdsJson { get; set; }
         
         public string RoomId { get; set; }
 
